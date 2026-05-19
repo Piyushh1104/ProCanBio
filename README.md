@@ -1,18 +1,20 @@
-# PreMieR: Prediction of Mannose Interacting Residues
+# ProCanBio: A Database of Manually Curated Biomarkers for Prostate Cancer
 
 ## Overview
 
-PreMieR is a computational method developed for predicting mannose interacting residues (MIRs) in proteins using local composition-based machine learning approaches.
+ProCanBio is a manually curated database developed for maintaining comprehensive information about biomarkers associated with Prostate Cancer.
 
-Mannose-binding proteins (MBPs) are important components of the innate immune system. These proteins recognize mannose molecules present on pathogens and help activate immune defense mechanisms such as complement activation and phagocytosis.
+The database integrates biomarker information collected from published literature and provides detailed annotations regarding:
 
-This study introduces Support Vector Machine (SVM)-based prediction models using:
+- Diagnostic biomarkers
+- Prognostic biomarkers
+- Predictive biomarkers
+- Genomics data
+- Proteomics data
+- Metabolomics data
+- Epigenomics data
 
-- Binary profile patterns
-- Evolutionary information (PSSM)
-- Composition profile of patterns (CPP)
-
-Among these, composition-based models achieved the best performance.
+ProCanBio was developed to provide a centralized resource for prostate cancer biomarker research and analysis.
 
 ---
 
@@ -20,239 +22,395 @@ Among these, composition-based models achieved the best performance.
 
 ## Title
 
-Identification of Mannose Interacting Residues Using Local Composition
+ProCanBio: a database of manually curated biomarkers for Prostate Cancer
 
 ## Authors
 
-- Sandhya Agarwal
-- Nitish Kumar Mishra
-- Harinder Singh
+- Dikscha Sapra
+- Harpreet Kaur
+- Anjali Dhall
 - Gajendra P. S. Raghava
 
-## Journal
+## Publication Type
 
-PLoS ONE
+bioRxiv Preprint
 
-## Year
+## Published Date
 
-2011
-
-## Volume and Issue
-
-Volume 6, Issue 9
-
-## Article Number
-
-e24039
+7 June 2021
 
 ## Correct DOI
 
-https://doi.org/10.1371/journal.pone.0024039
+https://doi.org/10.1101/2021.06.06.447247
 
 ---
 
-# Abstract
+# Background
 
-This study presents machine learning models for predicting mannose interacting residues in proteins.
+Prostate Cancer is one of the most common malignancies in men worldwide and is associated with high mortality.
 
-A dataset of mannose-binding proteins was created from Protein Data Bank (PDB) structures. Different SVM-based approaches were evaluated using:
+Traditional biomarkers such as:
 
-- Binary profiles
-- PSSM evolutionary profiles
-- Composition profile patterns
+- PSA (Prostate Specific Antigen)
 
-The composition-based approach achieved the best performance with:
+lack sufficient specificity because elevated PSA levels are also associated with:
 
-- MCC up to 0.74
-- Accuracy up to 86.64%
+- Benign Prostatic Hyperplasia (BPH)
+- Prostatitis
+- Prostatic Intraepithelial Neoplasia (PIN)
 
-The study also developed a web server and standalone software called **PreMieR**.
+Therefore, there is a need for more reliable biomarkers for:
 
----
+- Diagnosis
+- Prognosis
+- Therapeutic response prediction
 
-# Biological Importance
+Although numerous studies have identified prostate cancer biomarkers, the information was scattered across multiple publications in unstructured formats.
 
-Mannose-binding proteins are involved in:
-
-- Innate immunity
-- Pathogen recognition
-- Complement activation
-- Opsonization
-- Phagocytosis
-
-These proteins recognize mannose molecules present on microbial surfaces.
+ProCanBio was developed to consolidate this information into a single user-friendly resource.
 
 ---
 
-# Dataset Information
+# Objectives
 
-## Dataset Source
+The study aimed to:
 
-- Protein Data Bank (PDB)
-- SuperSite documentation
-
-## Final Dataset
-
-- 120 non-redundant mannose-binding protein chains
-- Less than 25% sequence similarity
-
-### Residues
-
-- 1029 mannose interacting residues
-- 38136 non-interacting residues
+- Develop a manually curated prostate cancer biomarker database
+- Consolidate biomarker information from published literature
+- Provide detailed annotations for each biomarker
+- Develop advanced search and browsing tools
+- Facilitate biomarker research and validation
 
 ---
 
-# Machine Learning Approaches
+# Data Collection
 
-## 1. Binary Profile Based SVM
+Two PubMed keyword searches were performed:
 
-Patterns were encoded into binary vectors.
+1. `"prostate cancer" AND biomarkers`
+2. `"prostate cancer" AND signatures`
 
-### Performance
+## Literature Statistics
 
-- MCC: 0.19
-- Accuracy: 59.60%
+| Description | Count |
+|---|---|
+| Total publications retrieved | 4045 |
+| Duplicate publications removed | 112 |
+| Publications manually curated | 412 |
 
----
-
-## 2. PSSM Based SVM
-
-Evolutionary information was incorporated using PSI-BLAST generated PSSM profiles.
-
-### Performance
-
-- MCC: 0.32
-- Accuracy: 65.66%
+The curated information was extracted manually from published articles.
 
 ---
 
-## 3. Composition Profile of Patterns (CPP)
+# Database Statistics
 
-Patterns were represented using amino acid composition.
+## Total Entries
 
-### Best Performance
-
-- MCC: 0.74
-- Accuracy: 86.64%
-
-This method significantly outperformed binary and PSSM approaches.
+| Category | Count |
+|---|---|
+| Total biomarker entries | 2053 |
+| Unique biomarkers | 1497 |
 
 ---
 
-# Important Findings
+# Biomolecule Distribution
 
-The study found that certain amino acids are preferred in mannose interaction:
-
-- Aspartic acid (D)
-- Glutamic acid (E)
-- Asparagine (N)
-- Glutamine (Q)
-- Serine (S)
-- Threonine (T)
-- Tryptophan (W)
-- Tyrosine (Y)
-
-These residues contribute to carbohydrate recognition and binding.
+| Biomolecule Type | Count |
+|---|---|
+| Protein biomarkers | 766 |
+| RNA biomarkers | 488 |
+| miRNA biomarkers | 261 |
+| Metabolite biomarkers | 122 |
+| DNA biomarkers | 19 |
 
 ---
 
-# Window Size Analysis
+# Biomarker Basis
 
-Different pattern lengths were tested:
-
-- 17
-- 19
-- 21
-- 23
-- 25
-
-Best performance was obtained using:
-
-- Window size 23
-- MCC: 0.74
+| Biomarker Basis | Count |
+|---|---|
+| Expression-based | 1286 |
+| Concentration-based | 378 |
+| Methylation-based | 218 |
+| Mutation-based | 157 |
 
 ---
 
-# Evaluation Metrics
+# Source of Biomarkers
 
-The models were evaluated using:
+| Source | Count |
+|---|---|
+| Tissue | 1069 |
+| Serum | 354 |
+| Blood | 245 |
+| Urine | 170 |
+| Plasma | 137 |
+| Cell lines | 51 |
 
+---
+
+# Types of Biomarkers
+
+The database contains:
+
+- Diagnostic biomarkers
+- Prognostic biomarkers
+- Predictive biomarkers
+
+## Major Uses
+
+### Diagnostic Biomarkers
+
+Used for distinguishing:
+
+- Prostate cancer
+- Healthy controls
+- BPH
+- PIN
+- Prostatitis
+
+### Prognostic Biomarkers
+
+Used for:
+
+- Gleason score prediction
+- Metastasis prediction
+- Survival analysis
+- Biochemical recurrence prediction
+
+### Predictive Biomarkers
+
+Used for:
+
+- Therapy response prediction
+- Drug response analysis
+
+---
+
+# Top Biomarkers in ProCanBio
+
+| Biomarker | Biomolecule | Number of Studies |
+|---|---|---|
+| PCA3 | mRNA/Protein | 17 |
+| Ki-67 | Protein | 9 |
+| Prostate Health Index (phi) | mRNA/Protein | 9 |
+| miR-141 | miRNA | 8 |
+| PSA | mRNA/Protein | 5 |
+| PTEN | mRNA/Protein/DNA | 4 |
+
+---
+
+# Information Stored for Each Biomarker
+
+Each biomarker entry includes:
+
+- PubMed ID
+- Biomarker name
+- Technical name
+- Biomolecule type
+- Biomarker basis
+- Regulation status
+- Source of biomarker
+- Patient cohort
 - Sensitivity
 - Specificity
+- ROC-AUC
 - Accuracy
-- Matthews Correlation Coefficient (MCC)
-- Area Under Curve (AUC)
+- p-value
+- Hazard Ratio (HR)
+- Odds Ratio (OR)
+- Experimental methods
+- Clinical trial information
+- Degree of validity
 
 ---
 
-# Web Server
+# Web Server Architecture
 
-## PreMieR Server
+The database was developed using:
 
-The prediction method was implemented as an online web server.
+## Backend
 
-### Features
+- MySQL v8
 
-- Predict mannose interacting residues
-- Adjustable thresholds
-- Graphical visualization
-- Composition-based prediction
+## Frontend
 
-### Server Link
+- PHP v7
+- HTML5
+- JavaScript
+- CSS3
 
-http://www.imtech.res.in/raghava/premier/
+## Server
+
+- Apache HTTP Server
+- Linux platform
+
+---
+
+# Query and Search Tools
+
+## Keyword Search
+
+Allows searching using:
+
+- Biomarker name
+- Biomolecule
+- PMID
+- Subjects
+- Regulation conditions
+
+---
+
+## Complex Search
+
+Supports multiple query conditions including:
+
+- Biomolecule
+- Biomarker type
+- Source
+- Publication year
+- Subjects
+
+Logical operators supported:
+
+- AND
+- OR
+- NOT
+
+---
+
+## Browse Tools
+
+Users can browse biomarkers based on:
+
+- Biomolecule
+- Biomarker type
+- Source
+- Biomarker basis
+
+---
+
+# Web Server Features
+
+ProCanBio provides:
+
+- Advanced keyword search
+- Complex search queries
+- Browsing tools
+- Biomarker cards
+- Downloadable results
+- Clinical trial links
+- GeneCards integration
+- PubMed integration
+
+## Download Formats
+
+- CSV
+- XLS
+- PDF
+
+---
+
+# Case Studies
+
+## PSMA Biomarker Query
+
+The database identified:
+
+- 15 unique PSMA entries
+- Derived from 6 research publications
+
+PSMA was mainly used for:
+
+- Diagnostic applications
+
+---
+
+## Prognostic Protein Biomarkers after 2015
+
+Complex search identified:
+
+- 23 unique prognostic protein biomarkers
+
+Important biomarkers included:
+
+- WISP1
+- Ki-67
+- GLUT1
+- AZGP1
 
 ---
 
 # Applications
 
-PreMieR can be useful for:
+ProCanBio can be used for:
 
-- Protein-carbohydrate interaction analysis
-- Immunology research
-- Host-pathogen interaction studies
-- Functional annotation of proteins
-- Drug discovery
-- Glycobiology research
+- Biomarker discovery
+- Cancer genomics research
+- Proteomics research
+- Clinical biomarker validation
+- Drug target analysis
+- Precision oncology
+- Prostate cancer diagnostics
+- Prognostic biomarker analysis
 
 ---
 
-# Key Technologies
+# Technologies Used
 
-- Support Vector Machine (SVM)
-- PSI-BLAST
-- Position Specific Scoring Matrix (PSSM)
-- Composition Profile of Patterns (CPP)
-- Machine Learning
-- Bioinformatics
+- MySQL
+- PHP
+- Apache Server
+- JavaScript
+- HTML5
+- CSS3
+- Manual Literature Curation
+- Bioinformatics Database Systems
+
+---
+
+# Important Findings
+
+The study demonstrated that:
+
+- Prostate cancer biomarker information is highly scattered
+- Manual curation significantly improves accessibility
+- Integrated biomarker databases facilitate cancer research
+- Multi-omics biomarker resources are highly valuable
 
 ---
 
 # Conclusion
 
-This study demonstrates that local amino acid composition can effectively predict mannose interacting residues in proteins.
+ProCanBio provides a comprehensive manually curated resource for prostate cancer biomarkers.
 
-The CPP-based approach performed substantially better than binary and evolutionary profile-based methods.
+The database integrates:
 
-The work provides:
+- Genomics
+- Transcriptomics
+- Proteomics
+- Metabolomics
+- Clinical biomarker information
 
-- A benchmark dataset
-- A prediction framework
-- A publicly accessible web server
-- Insight into protein-carbohydrate interactions
+with advanced search and browsing capabilities, making it a valuable resource for prostate cancer research and biomarker discovery.
+
+---
+
+# Web Server
+
+https://webs.iiitd.edu.in/raghava/procanbio/
 
 ---
 
 # Citation
 
-Agarwal S, Mishra NK, Singh H, Raghava GPS (2011)
+Sapra D, Kaur H, Dhall A, Raghava GPS.
 
-Identification of Mannose Interacting Residues Using Local Composition.
+ProCanBio: a database of manually curated biomarkers for Prostate Cancer.
 
-PLoS ONE 6(9): e24039.
+bioRxiv. 2021.
 
-DOI: https://doi.org/10.1371/journal.pone.0024039
+DOI: https://doi.org/10.1101/2021.06.06.447247
 
 ---
 
@@ -262,8 +420,7 @@ DOI: https://doi.org/10.1371/journal.pone.0024039
 
 Email: raghava@iiitd.ac.in
 
-Address:
-
+Address:  
 Indraprastha Institute of Information Technology Delhi
 
 ---
