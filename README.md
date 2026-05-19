@@ -31,17 +31,14 @@ ProCanBio: a database of manually curated biomarkers for Prostate Cancer
 - Anjali Dhall
 - Gajendra P. S. Raghava
 
-## Publication Type
-
-bioRxiv Preprint
 
 ## Published Date
+ 10 december 2021
 
-7 June 2021
+## DOI
+https://doi.org/10.1089/cmb.2021.0348
 
-## Correct DOI
 
-https://doi.org/10.1101/2021.06.06.447247
 
 ---
 
@@ -408,9 +405,6 @@ Sapra D, Kaur H, Dhall A, Raghava GPS.
 
 ProCanBio: a database of manually curated biomarkers for Prostate Cancer.
 
-bioRxiv. 2021.
-
-DOI: https://doi.org/10.1101/2021.06.06.447247
 
 ---
 
