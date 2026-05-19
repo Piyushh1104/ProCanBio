@@ -37,7 +37,7 @@ ProCanBio: a database of manually curated biomarkers for Prostate Cancer
 
 ## DOI
 https://doi.org/10.1089/cmb.2021.0348
-
+https://doi.org/10.5281/zenodo.20280383
 
 
 ---
